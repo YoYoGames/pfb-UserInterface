@@ -85,12 +85,12 @@ function FillOptions(){
 	
 	// Get current fullscreen state
 	if(!is_undefined(global.control_fullscreen)){
-		global.control_fullscreen.Checked = global.fullscreen;
+		global.control_fullscreen.checked = global.fullscreen;
 	}
 	
 	// Get current AA state
 	if(!is_undefined(global.control_aa)){
-		global.control_aa.Checked = global.aa;
+		global.control_aa.checked = global.aa;
 	}
 	
 	// Get current language
@@ -132,13 +132,13 @@ function ApplyOptions(){
     
 	// Set Fullscreen
 	if(!is_undefined(global.control_fullscreen)){
-        global.fullscreen = global.control_fullscreen.Checked;
+        global.fullscreen = global.control_fullscreen.checked;
 		window_set_fullscreen(global.fullscreen);
 	}
     
 	// Set AA
 	if(!is_undefined(global.control_aa)){
-        global.aa = global.control_aa.Checked;
+        global.aa = global.control_aa.checked;
 		gpu_set_tex_filter(global.aa);
 	}
     
@@ -187,8 +187,8 @@ function Confirm(_yes, _no=CancelConfirmation){
 	var _layer = layer_get_flexpanel_node("GMUI_Confirmation");
 	var _yes_button = GetInstanceIDFromElement(flexpanel_node_get_struct(flexpanel_node_get_child(_layer,"Yes")),Button);
 	var _no_button = GetInstanceIDFromElement(flexpanel_node_get_struct(flexpanel_node_get_child(_layer,"No")),Button);
-	_yes_button.Button_Release = _yes;
-	_no_button.Button_Release = _no;
+	_yes_button.button_release = _yes;
+	_no_button.button_release = _no;
 }
 
 /// @desc Close the confirmation box without doing anything

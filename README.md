@@ -30,6 +30,7 @@ A comprehensive collection of reusable UI components for GameMaker projects.
 * [Confirmation](#Confirmation)
 * [Game Over](#Game-Over)
 
+[UI Manager Object](#UI-Manager-Object)\
 [Layer Management Functions](#Layer-Management-Functions)\
 [Integration Tips](#Integration-Tips)
 
@@ -529,6 +530,44 @@ layer_set_visible("GMUI_GameOver", true);
 HideAllUI();
 layer_set_visible("GMUI_GameOver", true);
 ```
+
+---
+
+## UI Manager Object
+
+### oUIManager
+**Purpose:** A controller object that initializes the UI system and handles global keyboard shortcuts.
+
+**What it does:**
+
+1. **Layer Registration (Create Event):**
+   - Marks all GMUI_* layers as used with `gml_pragma()` to prevent GameMaker from stripping them during compilation
+   - Initializes `global.previous_menu` to "GMUI_MainMenu" for menu navigation tracking
+
+2. **Keyboard Shortcuts (Step Event):**
+   - `Ctrl + E`: Toggles the character/equipment screen (GMUI_Character)
+   - `Escape`: Pauses the game (opens GMUI_Pause) when not already paused
+
+**Properties:**
+- No configurable properties
+- Non-persistent (doesn't carry between rooms)
+- Invisible (no sprite)
+
+**Usage:**
+```gml
+// Place one instance of oUIManager in your room
+// The object handles everything automatically
+
+// The manager sets up this global variable:
+// global.previous_menu - Tracks which menu to return to (default: "GMUI_MainMenu")
+```
+
+**Important Notes:**
+- Required for the UI system to function properly
+- Should be placed in rooms that use the GMUI_* layers
+- Only one instance needed per room
+- The `gml_pragma()` calls ensure all UI layers are included in final builds
+- Keyboard shortcuts can be customized by editing the Step_0 event in objects/oUIManager/Step_0.gml:1
 
 ---
 
