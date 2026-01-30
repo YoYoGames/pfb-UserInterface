@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_22" data-name="Layer 22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <line x1="10.49" y1="29.18" x2="40.31" y2="29.18" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+  <line x1="15.94" y1="53.53" x2="10.49" y2="29.18" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+  <line x1="33.77" y1="53.53" x2="15.94" y2="53.53" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+  <line x1="20.1" y1="29.18" x2="24.85" y2="53.53" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+  <line x1="31.99" y1="53.53" x2="31.99" y2="29.18" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+  <line x1="53.51" y1="29.18" x2="23.69" y2="29.18" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+  <line x1="48.06" y1="53.53" x2="53.51" y2="29.18" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+  <line x1="30.23" y1="53.53" x2="48.06" y2="53.53" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+  <line x1="43.9" y1="29.18" x2="39.15" y2="53.53" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+  <line x1="32.01" y1="53.53" x2="32.01" y2="29.18" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+  <line x1="50.79" y1="41.36" x2="13.21" y2="41.36" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+  <g>
+    <line x1="32.01" y1="14.08" x2="14.83" y2="29.18" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+    <line x1="31.99" y1="14.08" x2="49.17" y2="29.18" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+  </g>
+  <circle cx="32.01" cy="14.56" r="4.09" fill="#fff" stroke="#fff" stroke-miterlimit="10"/>
+</svg>

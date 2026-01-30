@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <g id="Layer_17_copy" data-name="Layer 17 copy">
+    <g>
+      <path d="M32,24.95h0c8.09,0,14.67,6.57,14.67,14.67v14.23c0,.95-.77,1.73-1.73,1.73h-25.88c-.95,0-1.73-.77-1.73-1.73v-14.23c0-8.09,6.57-14.67,14.67-14.67Z" fill="#fff"/>
+      <ellipse cx="32" cy="18.12" rx="9.16" ry="9.69" fill="#fff"/>
+    </g>
+  </g>
+</svg>

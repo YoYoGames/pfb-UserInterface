@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <g id="Layer_17" data-name="Layer 17">
+    <g>
+      <rect x="24.46" y="25" width="32" height="14" rx="5" ry="5" transform="translate(80.92 64) rotate(180)" fill="#fff"/>
+      <path d="M8.27,30.45L29.24,13.32c1.31-1.07,3.27-.14,3.27,1.55v34.25c0,1.69-1.96,2.62-3.27,1.55l-20.97-17.13c-.98-.8-.98-2.3,0-3.1Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

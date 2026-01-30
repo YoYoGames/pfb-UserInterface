@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_22" data-name="Layer 22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="6.31" y="22.2" width="22.5" height="19.6" rx="4" ry="4" fill="#fff"/>
+  <path d="M11.72,34.09l17.99,18.61c1.87,1.94,5.16.61,5.16-2.09V13.39c0-2.7-3.28-4.02-5.16-2.09L11.72,29.91c-1.12,1.16-1.12,3.01,0,4.17Z" fill="#fff"/>
+  <path d="M46.44,32.03s0-.02,0-.03c0-6.21-2.05-9.02-4.96-11.25" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+  <path d="M46.44,32s0,.02,0,.03c0,6.21-2.05,9.02-4.96,11.25" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+  <path d="M57.69,32.04s0-.03,0-.05c0-10.34-3.44-15-8.33-18.72" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+  <path d="M57.69,31.99s0,.03,0,.05c0,10.34-3.44,15-8.33,18.72" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+</svg>

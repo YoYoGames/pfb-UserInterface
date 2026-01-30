@@ -1,0 +1,37 @@
+﻿name,en,fr,de
+Language,English,French,German
+button_default,Button,Bouton,Button
+button_confirm,Confirm,Confirmer,Bestätigen
+button_cancel,Cancel,Annuler,Abbrechen
+button_close,Close,Fermer,Schließen
+button_quit,Quit,Quitter,Beenden
+button_restart,Restart,Redémarrer,Neustart
+button_resume,Resume,Reprendre,Fortsetzen
+button_mainmenu,Main Menu,Menu principal,Hauptmenü
+button_next,Next,Suivant,Weiter
+button_previous,Previous,Précédent,Zurück
+button_play,Play,Jouer,Spielen
+button_options,Options,Options,Optionen
+button_credits,Credits,Crédits,Credits
+button_yes,Yes,Oui,Ja
+button_no,No,Non,Nein
+button_select,Select...,Sélectionnez...,Wählen Sie...
+title_options,Options,Options,Optionen
+title_equipment,Equipment,Équipement,Ausrüstung
+title_paused,Paused,En pause,Pausiert
+title_confirmation,Confirmation,Confirmation,Bestätigung
+title_gameover,Game Over,Fin de partie,Spiel vorbei
+title_tutorial,Tutorial,Tutoriel,Tutorial
+title_highscore,High Score,Meilleur score,Highscore
+setting_volume,Volume,Volume,Lautstärke
+setting_resolution,Resolution,Résolution,Auflösung
+setting_fullscreen,Fullscreen,Plein écran,Vollbild
+setting_antialiasing,Anti-aliasing,Anti-aliasing,Anti-Aliasing
+setting_language,Language,Langue,Sprache
+character_health,Health,Santé,Gesundheit
+character_armour,armour,Armure,Rüstung
+character_attack,Attack,Attaque,Angriff
+character_movement,Movement,Mouvement,Bewegung
+character_luck,Luck,Chance,Glück
+text_sure,Are you sure?,Êtes-vous sûr ?,Bist du sicher?
+infobox_default,Example Message,Exemple de message,Beispielnachricht

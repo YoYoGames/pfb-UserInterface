@@ -1,0 +1,3 @@
+if(pressed){
+    pressed = false;
+}

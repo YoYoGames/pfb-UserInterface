@@ -1,0 +1,1 @@
+draw_enable_svg_aa(true);

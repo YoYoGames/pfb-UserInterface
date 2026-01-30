@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <g>
+    <polygon points="25.11 43.71 20.29 38.89 40.6 10.41 53.59 23.4 25.11 43.71" fill="#fff"/>
+    <polygon points="54.61 9.27 54.73 9.39 53.59 23.4 40.6 10.41 54.61 9.27" fill="#fff"/>
+    <rect x="15.42" y="37.77" width="14.57" height="7.06" rx="2" ry="2" transform="translate(35.85 -3.95) rotate(45)" fill="#fff"/>
+    <rect x="15.37" y="43.36" width="7.56" height="2.99" rx=".5" ry=".5" transform="translate(37.33 -.4) rotate(45)" fill="#fff"/>
+    <rect x="13.25" y="45.48" width="7.56" height="2.99" rx=".5" ry=".5" transform="translate(38.2 1.72) rotate(45)" fill="#fff"/>
+    <rect x="11.13" y="47.59" width="7.56" height="2.99" rx=".5" ry=".5" transform="translate(39.08 3.83) rotate(45)" fill="#fff"/>
+    <rect x="9.02" y="49.71" width="7.56" height="2.99" rx=".5" ry=".5" transform="translate(39.96 5.95) rotate(45)" fill="#fff"/>
+  </g>
+  <g>
+    <polygon points="38.89 43.71 43.71 38.89 23.4 10.41 10.41 23.4 38.89 43.71" fill="#fff"/>
+    <polygon points="9.39 9.27 9.27 9.39 10.41 23.4 23.4 10.41 9.39 9.27" fill="#fff"/>
+    <rect x="34.02" y="37.77" width="14.57" height="7.06" rx="2" ry="2" transform="translate(99.71 41.3) rotate(135)" fill="#fff"/>
+    <rect x="41.07" y="43.36" width="7.56" height="2.99" rx=".5" ry=".5" transform="translate(108.29 44.86) rotate(135)" fill="#fff"/>
+    <rect x="43.19" y="45.48" width="7.56" height="2.99" rx=".5" ry=".5" transform="translate(113.4 46.97) rotate(135)" fill="#fff"/>
+    <rect x="45.31" y="47.59" width="7.56" height="2.99" rx=".5" ry=".5" transform="translate(118.51 49.09) rotate(135)" fill="#fff"/>
+    <rect x="47.43" y="49.71" width="7.56" height="2.99" rx=".5" ry=".5" transform="translate(123.62 51.21) rotate(135)" fill="#fff"/>
+  </g>
+</svg>

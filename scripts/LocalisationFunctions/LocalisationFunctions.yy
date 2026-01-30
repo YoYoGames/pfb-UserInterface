@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"LocalisationFunctions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"LocalisationFunctions",
+  "parent":{
+    "name":"UI_Prefabs",
+    "path":"UI_Prefabs.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

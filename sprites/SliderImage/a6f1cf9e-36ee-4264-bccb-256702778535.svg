@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 36">
+  <g id="Layer_1-2" data-name="Layer 1">
+    <rect x="7" y="12" width="128" height="12" rx="6" ry="6" fill="#bcbec0"/>
+    <g>
+      <path d="M18,35.5C8.35,35.5.5,27.65.5,18S8.35.5,18,.5s17.5,7.85,17.5,17.5-7.85,17.5-17.5,17.5Z" fill="#fff"/>
+      <path d="M18,1c9.37,0,17,7.63,17,17s-7.63,17-17,17S1,27.37,1,18,8.63,1,18,1M18,0C8.06,0,0,8.06,0,18s8.06,18,18,18,18-8.06,18-18S27.94,0,18,0h0Z" fill="#6d6e71"/>
+    </g>
+  </g>
+</svg>

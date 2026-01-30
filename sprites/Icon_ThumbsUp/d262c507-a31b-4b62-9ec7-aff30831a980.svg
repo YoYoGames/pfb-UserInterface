@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_22" data-name="Layer 22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="25.31" y="23.18" width="30.88" height="8.81" rx="4.4" ry="4.4" fill="#fff"/>
+  <rect x="24.2" y="31.74" width="30.88" height="8.81" rx="4.4" ry="4.4" fill="#fff"/>
+  <rect x="21.62" y="39.55" width="30.88" height="8.81" rx="4.4" ry="4.4" fill="#fff"/>
+  <rect x="23.25" y="47.28" width="26.25" height="8.81" rx="4.4" ry="4.4" fill="#fff"/>
+  <path d="M15.54,27.58h26.39v28.51h-14.39c-6.62,0-12-5.38-12-12v-16.51h0Z" fill="#fff"/>
+  <rect x="7.81" y="26.49" width="12.45" height="26.78" rx="3" ry="3" fill="#fff"/>
+  <path d="M16.91,31.89s2.91-5.79,5.34-8.22c3.02-3.02,3.61-6.83,7.03-13.24,2.67-5,7.96-1.75,7.78,2.84s-.57,10.32-4.49,17.49-15.66,1.13-15.66,1.13Z" fill="#fff"/>
+</svg>

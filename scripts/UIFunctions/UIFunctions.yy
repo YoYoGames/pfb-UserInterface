@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"UIFunctions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"UIFunctions",
+  "parent":{
+    "name":"UI_Prefabs",
+    "path":"UI_Prefabs.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

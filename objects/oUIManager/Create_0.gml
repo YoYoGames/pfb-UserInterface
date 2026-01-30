@@ -1,0 +1,1 @@
+global.previous_menu = "GMUI_MainMenu";
