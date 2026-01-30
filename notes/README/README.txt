@@ -1,6 +1,6 @@
 # UI Prefabs Library
 
-A comprehensive collection of reusable UI components for GameMaker Studio projects.
+A comprehensive collection of reusable UI components for GameMaker projects.
 
 # Contents
 
