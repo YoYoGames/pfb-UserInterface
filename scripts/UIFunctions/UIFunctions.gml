@@ -11,6 +11,12 @@ global.ui_text = {};
 
 global.paused = false;
 
+global.control_volume = undefined;
+global.control_resolution = undefined;
+global.control_fullscreen = undefined;
+global.control_aa = undefined;
+global.control_language = undefined;
+
 #export ApplyOptions, CancelConfirmation, CancelOptions, OpenEquipment, OpenOptions, CloseEquipment, Confirm, ConfirmQuit, ExitGame, Pause, Quit
 
 function AddLocalisedText(_inst,_string) constructor {
