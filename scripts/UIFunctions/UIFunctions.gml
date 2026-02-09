@@ -189,12 +189,17 @@ function OpenEquipment(){
 /// @param {function} _yes The function to call if the user selects Yes
 /// @param {function} _no The function to call if the user selects No - Defaults to closing the box without doing anything
 function Confirm(_yes, _no=CancelConfirmation){
-	layer_set_visible("GMUI_Confirmation",true);
-	var _layer = layer_get_flexpanel_node("GMUI_Confirmation");
-	var _yes_button = GetInstanceIDFromElement(flexpanel_node_get_struct(flexpanel_node_get_child(_layer,"Yes")),Button);
-	var _no_button = GetInstanceIDFromElement(flexpanel_node_get_struct(flexpanel_node_get_child(_layer,"No")),Button);
-	_yes_button.button_release = _yes;
-	_no_button.button_release = _no;
+	if(layer_exists("GMUI_Confirmation")){
+		layer_set_visible("GMUI_Confirmation",true);
+		var _layer = layer_get_flexpanel_node("GMUI_Confirmation");
+		var _yes_button = GetInstanceIDFromElement(flexpanel_node_get_struct(flexpanel_node_get_child(_layer,"Yes")),Button);
+		var _no_button = GetInstanceIDFromElement(flexpanel_node_get_struct(flexpanel_node_get_child(_layer,"No")),Button);
+		_yes_button.button_release = _yes;
+		_no_button.button_release = _no;
+	} else {
+		// if the confirmation layer doesnt exist then skip the confirmation and call the _yes function
+		method_call(_yes);
+	}
 }
 
 /// @desc Close the confirmation box without doing anything
