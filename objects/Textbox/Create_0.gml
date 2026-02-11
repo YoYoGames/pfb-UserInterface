@@ -3,68 +3,127 @@ event_inherited();
 clickInitiated = false;
 hasFocus = false;
 
-w2 = sprite_width/2;
-h2 = sprite_height/2;
-
-bounds = {
-    left:   x-w2+horizontal_padding,
-    center: x,
-    right:  x+w2-horizontal_padding,
-    top:    y-h2+vertical_padding,
-    middle: y,
-    bottom: y+h2-vertical_padding
-}
-
 text_start_x_offset = 5;
-text_box_width = bounds.right-bounds.left;
-text_box_height = bounds.bottom-bounds.top
+
+// Variable to track the current position, so we know if we need to readjust any elements position
+current = { x: x, y: y }
 
 // Set the sprite colour to the value listed in the variable definition
 image_blend = sprite_colour;
 
 prevStringLength = 0;
 
-// Setup text alignment based on the overflow_behaviour values
-text_h_align = textalign_left;
-text_v_align = textalign_middle;
+// Initialise the text box dimensions
+text_box_width = 0;
+text_box_height = 0;
+
+// Set the bounds that should be used for the text box
+setBounds();
 
 // Create the Text Element that we will be using to show our text
 text_element = layer_text_create(layer,bounds.left,bounds.top,font,text);
 
-if (overflow_behaviour == "wrap")
-{
-    layer_text_wrap(text_element,true);
-} else if (overflow_behaviour == "scroll")
-{
-    layer_text_wrap(text_element,false);
-	
-	// Adjust the y-position of the text if the text should scroll
-	switch (vertical_align)
-	{
-		case fa_middle:
-			layer_text_y(text_element,bounds.middle-text_size);
-			break;
-		case fa_bottom:
-			layer_text_y(text_element,bounds.bottom-text_size*1.5);
-	}
-}
-
+// Set the text's position based on its alignment
+setVerticalAlignmentPos();
 layer_text_halign(text_element,horizontal_align);
-layer_text_valign(text_element,vertical_align);
 
 font_size = font_get_size(font);
 var _scale = text_size/font_size;
 layer_text_xscale(text_element,_scale);
 layer_text_yscale(text_element,_scale);
 
-layer_text_framew(text_element,text_box_width/_scale);
-layer_text_frameh(text_element,text_box_height/_scale);
+setTextboxSize();
 
 layer_text_blend(text_element,text_colour);
 layer_text_linespacing(text_element,line_separation);
 
 draw_set_font(font)
 caret_width = string_width("|")*_scale;
+
+/// @desc This function will set the y-position of the Text Element to ensure that it is correctly shown within the confines of the Textbox
+function setVerticalAlignmentPos()
+{ 
+	layer_text_valign(text_element,vertical_align);
+	
+	if (overflow_behaviour == "wrap")
+	{
+	    layer_text_wrap(text_element,true);
+		
+		var _font_size = font_get_size(font);
+		
+		// Adjust the y-position of the text if the text should scroll
+		switch (vertical_align)
+		{
+			case fa_top:
+				layer_text_y(text_element,bounds.top-text_size*0.5);
+				break;
+			case fa_middle:
+				layer_text_y(text_element,bounds.top);
+				break;
+			case fa_bottom:
+				layer_text_y(text_element,bounds.top+text_size*0.5);
+		}
+	} else if (overflow_behaviour == "scroll")
+	{
+	    layer_text_wrap(text_element,false);
+		
+		// Adjust the y-position of the text if the text should scroll
+		switch (vertical_align)
+		{
+			case fa_top:
+				layer_text_y(text_element,bounds.top);
+				break;
+			case fa_middle:
+				layer_text_y(text_element,bounds.middle-text_size);
+				break;
+			case fa_bottom:
+				layer_text_y(text_element,bounds.bottom-text_size*1.5);
+		}
+	}
+}
+
+/// @desc This function will set the bounds of the y-position of the Text Element to ensure that it is correctly shown within the confines of the Textbox
+function setBounds()
+{
+	w2 = sprite_width/2;
+	h2 = sprite_height/2;
+
+	bounds = {
+	    left:   x-w2+horizontal_padding,
+	    center: x,
+	    right:  x+w2-horizontal_padding,
+	    top:    y-h2+vertical_padding,
+	    middle: y,
+	    bottom: y+h2-vertical_padding
+	}
+	
+	text_box_width = bounds.right-bounds.left;
+	text_box_height = bounds.bottom-bounds.top;
+}
+
+/// @desc This function will set the text element's frame width and height which will then allow wrapping and alignment to be correctly updated
+function setTextboxSize()
+{
+	var _scale = text_size/font_size; 
+	layer_text_framew(text_element,text_box_width/_scale);
+	layer_text_frameh(text_element,text_box_height/_scale);
+}
+
+/// @desc This function will recalculate the text elements position. This is called when the text box position changes but you can also call it directly if needed
+function recalculateTextPosition()
+{
+	// Update the bounds that should be used for the text box
+	setBounds();
+	
+	// Update the size (width and height) of the textbox on the Text Element
+	setTextboxSize();
+	
+	// Set the x-position of the Text Element
+	layer_text_x(text_element,bounds.left);
+	
+	// Set the y-position of the Text Element
+	setVerticalAlignmentPos();
+}
 
 // Ensure that the string that is passed is of the type we are expecting
 // This implementation relies on the potentially incorrect characters being at the end of the string

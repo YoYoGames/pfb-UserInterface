@@ -9,3 +9,10 @@ if (hasFocus){
         prevStringLength = string_length(keyboard_string);
     }
 }
+
+if (x != current.x || y != current.y)
+{
+	recalculateTextPosition();
+	
+	current = { x: x, y: y };
+}

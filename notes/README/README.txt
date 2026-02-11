@@ -295,6 +295,7 @@ spinner.visible = false;
 
 **Key Methods:**
 - `updateText(text, isLocalised)` - Update displayed text
+- `recalculateTextPosition()` - Called automatically when the textbox moves but can be called manually if needed
 
 **Usage:**
 ```gml
