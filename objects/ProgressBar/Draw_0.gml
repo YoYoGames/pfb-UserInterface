@@ -1,8 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Draw the progress bar background sprite and the progress bar foreground sprite scaled to show current progress
 
 draw_self();
-//draw_set_color(_prevColour);
 draw_set_halign(fa_center);
 
 // Get the value based on the current and max values

@@ -1,4 +1,3 @@
-// Set the slider to no longer have focus when the user releases the mouse
-if (has_focus){
-    has_focus = false;
-}
+/// @description End the slider interaction and trigger callbacks
+
+endInteraction();

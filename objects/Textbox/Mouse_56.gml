@@ -19,20 +19,8 @@ if (_mouseOverSelf != noone){
 			showVirtualKeyboard();
 		}
     }
-} else {
-    hasFocus = false;
-
-	// If the user is on a mobile device
-	if (os_type == os_android || os_type == os_ios){
-		// 
-		var _mouseOverAny = collision_point(mouse_x, mouse_y, all, false, false);
-		
-		if (_mouseOverAny == noone)
-		{
-			// Hide the virtual keyboard
-			keyboard_virtual_hide();
-		}
-	}
+} else if (hasFocus){
+    endInteraction();
 }
 
 clickInitiated = false;

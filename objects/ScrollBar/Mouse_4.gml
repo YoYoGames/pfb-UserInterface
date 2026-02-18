@@ -1,3 +1,5 @@
+/// @description Jump the scrollbar thumb to the clicked position
+
 if(horizontal){
     percentage = (mouse_x-scroll_top) / (scroll_bottom-scroll_top);
     thumb_offset = percentage*(bar_width-thumb_width);

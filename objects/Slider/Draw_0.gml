@@ -1,3 +1,5 @@
+/// @description Draw the slider bar and handle at their current positions
+
 // Update the position of the slider
 updatePosition();
 

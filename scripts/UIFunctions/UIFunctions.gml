@@ -1,3 +1,4 @@
+// Global game settings
 global.volume = 50;
 global.resolution_w = window_get_width();
 global.resolution_h = window_get_height();
@@ -5,12 +6,16 @@ global.fullscreen = window_get_fullscreen();
 global.aa = gpu_get_texfilter();
 global.shadows = false;
 
+// Available resolution options
 global.resolutions = [ [1366,768], [1920,1080], [2560,1440], [3840,2160] ];
 
+// UI text localisation mapping
 global.ui_text = {};
 
+// Game pause state
 global.paused = false;
 
+// References to UI control instances in the Options menu
 global.control_volume = undefined;
 global.control_resolution = undefined;
 global.control_fullscreen = undefined;
@@ -19,11 +24,18 @@ global.control_language = undefined;
 
 #export ApplyOptions, CancelConfirmation, CancelOptions, OpenEquipment, OpenOptions, CloseEquipment, Confirm, ConfirmQuit, ExitGame, Pause, Quit
 
+/// @desc Constructor for storing an instance ID and its associated localisation string
+/// @param {Id.Instance} _inst The instance ID
+/// @param {String} _string The localisation string key
 function AddLocalisedText(_inst,_string) constructor {
     instance = _inst;
     localisation_string = _string;
 }
 
+/// @desc Finds the instance ID for a given object type within a FlexPanel struct
+/// @param {Struct} _struct FlexPanel struct containing layer elements
+/// @param {Asset.GMObject} _object_id The object index to search for
+/// @returns {Id.Instance} The instance ID if found, undefined otherwise
 function GetInstanceIDFromElement(_struct,_object_id){
 	for(var _e=0; _e<array_length(_struct.layerElements); _e++){
 		if(struct_exists(_struct.layerElements[_e], "instanceObjectIndex")){
@@ -52,11 +64,12 @@ function GetTextElementId(_struct){
 	return undefined;
 }
 
+/// @desc Locates and stores references to all control instances in the Options menu
 function FindControls(){
     // Get a handle to the layer
 	var _layer = layer_get_flexpanel_node("GMUI_Options");
 	var _controls = flexpanel_node_get_child(_layer, "Inner");
-	
+
 	var _volume_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"Volume"),"Control");
 	global.control_volume = GetInstanceIDFromElement(flexpanel_node_get_struct(_volume_fp),Slider);
     var _resolution_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"Resolution"),"Control");
@@ -181,10 +194,12 @@ function OpenOptions(){
 	}
 }
 
+/// @desc Close the equipment/character screen
 function CloseEquipment(){
     layer_set_visible("GMUI_Character",false);
 }
 
+/// @desc Open the equipment/character screen
 function OpenEquipment(){
     layer_set_visible("GMUI_Character",true);
 }
@@ -229,6 +244,7 @@ function Pause(){
 	}
 }
 
+/// @desc Open a confirmation dialog before quitting to the main menu
 function ConfirmQuit(){
 	Confirm(Quit);
 }

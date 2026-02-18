@@ -1,3 +1,5 @@
+/// @description Draw the button sprite, then draw either the icon or text centered on the button
+
 draw_self();
 
 if(icon != noone){

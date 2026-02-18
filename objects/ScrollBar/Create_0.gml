@@ -24,6 +24,8 @@ if(horizontal){
 drag = 0;
 dragging = false;
 
+/// @desc This function scrolls the scrollbar by the specified amount and updates the thumb position
+/// @param {Real} _size The scroll amount (positive scrolls down/right, negative scrolls up/left)
 Scroll = function(_size){
     percentage = clamp(percentage+_size,0,1)
     if(horizontal){
@@ -33,6 +35,8 @@ Scroll = function(_size){
     }
 }
 
+/// @desc This function sets the scrollbar position based on the mouse position
+/// @param {Real} _position The position value used to calculate percentage (currently unused, uses mouse position instead)
 SetPosition = function(_position){
     if(horizontal){
         percentage = clamp((mouse_x-scroll_top) / (scroll_bottom-scroll_top),0,1);

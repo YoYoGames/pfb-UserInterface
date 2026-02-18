@@ -26,7 +26,7 @@ function getValue()
     return current_value;
 }
 
-/// @desc This function will the current value of the slider
+/// @desc This function will set the current value of the slider
 /// @param {Real} _newValue The new value of the slider
 function setValue(_newValue)
 {
@@ -42,39 +42,38 @@ function getValuePosition(_value)
     return (_valueAboveMinimum)*(slider_length/slider_value_range);
 }
 
-/// @desc This function will return the current value of the slider
-/// @returns {Real} The current value of the slider
+/// @desc This function will return the minimum value of the slider
+/// @returns {Real} The minimum value of the slider
 function getMinValue()
 {
     return min_value;
 }
 
-/// @desc This function will return the current value of the slider
+/// @desc This function will set the minimum value of the slider
 /// @param {Real} _newValue The new minimum value of the slider
 function setMinValue(_newValue)
 {
     min_value = _newValue;
 }
 
-/// @desc This function will return the current value of the slider
-/// @returns {Real} The current value of the slider
+/// @desc This function will return the maximum value of the slider
+/// @returns {Real} The maximum value of the slider
 function getMaxValue()
 {
     return max_value;
 }
 
-/// @desc This function will return the current value of the slider
+/// @desc This function will set the maximum value of the slider
 /// @param {Real} _newValue The new maximum value of the slider
 function setMaxValue(_newValue)
 {
     max_value = _newValue;
 }
 
-/// @desc This function will return the current value of the slider
-/// @param {Real} _newPos The new position value of the slider (which may be clamped by the other values)
-/// @param {Real} _currentPos The current position value of the slider
-/// @param {Real} _startPos The minimum position value of the slider
-/// @param {Real} _endPos The maximum position value of the slider
+/// @desc This function will update the slider thumb position based on new coordinates and recalculate the current value
+/// @param {Real} _newPosX The new X position of the slider thumb
+/// @param {Real} _newPosY The new Y position of the slider thumb
+/// @returns {Bool} Returns true when the position update is complete
 function updateSliderThumbPos(_newPosX, _newPosY)
 {
 	// Calculate the distance from start to the new position
@@ -156,4 +155,24 @@ function updatePosition()
     if (step_size > 0){
 		slider_step_size = (sqrt(sqr(slider_length.x)+sqr(slider_length.y))/slider_value_range)*step_size;
     }
+}
+
+/// @desc Default callback function that is called when the slider interaction ends (can be overridden by interaction_end_function)
+onInteractionEnd = function(){
+    show_debug_message($"Slider Interaction End  {string(current_value)}");
+}
+
+/// @desc This function will handle what should happen when the slider loses focus
+function endInteraction()
+{
+	// Set the slider to no longer have focus when the user releases the mouse
+	if (has_focus){
+    	has_focus = false;
+		
+		if(!is_undefined(interaction_end_function)){
+        	method_call(interaction_end_function);
+    	} else {
+        	method_call(onInteractionEnd);
+    	}
+	}
 }

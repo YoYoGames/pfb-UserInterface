@@ -1,3 +1,5 @@
+/// @description Reset scales, play sound, and call the button release callback function
+
 if(prevent_clickthrough){
 	exit;
 }

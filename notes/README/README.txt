@@ -41,15 +41,15 @@ A comprehensive collection of reusable UI components for GameMaker projects.
 
 **Key Properties:**
 - `text` / `localisation_string` - Button text (inherited from oLocalised)
-- `Icon` - Use a sprite icon instead of text
-- `Icon_Scale` - Size of the icon (default: 1)
-- `Font` - Font for button text (default: fUI)
-- `Text_Size` - Font size in pixels (default: 10)
-- `Colour` - Text/icon color
-- `Sound` - Audio to play when button is released
-- `Button_Release` - Function to execute on click
-- `Press_Scale` - Scale when pressed (default: 0.9)
-- `Hover_Scale` - Scale when hovered (default: 1.01)
+- `icon` - Use a sprite icon instead of text
+- `icon_scale` - Size of the icon (default: 1)
+- `font` - Font for button text (default: fUI)
+- `text_size` - Font size in pixels (default: 10)
+- `colour` - Text/icon color
+- `sound` - Audio to play when button is released
+- `button_release` - Function to execute on click
+- `press_scale` - Scale when pressed (default: 0.9)
+- `hover_scale` - Scale when hovered (default: 1.01)
 
 **Usage:**
 ```gml
@@ -60,7 +60,7 @@ button.text = "Click Me";
 button.localisation_string = "button_confirm";
 
 // Assign callback function
-button.Button_Release = function() {
+button.button_release = function() {
     show_debug_message("Button clicked!");
     // Your code here
 };
@@ -214,7 +214,7 @@ var content_offset = scroll_pos * max_scroll_height;
 ---
 
 ### Slider
-**Purpose:** A continuous value control with a draggable handle.
+**Purpose:** A continuous value control with a draggable handle and callback support.
 
 **Key Properties:**
 - `min_value` - Minimum value (default: 0)
@@ -228,6 +228,7 @@ var content_offset = scroll_pos * max_scroll_height;
 - `handle_sprite_scale` - Handle size (default: 1)
 - `padding` - Pixel inset from slider ends (default: 18)
 - `slider_bar_colour` - Bar color
+- `interaction_end_function` - Function to execute when the slider thumb is released
 
 **Key Methods:**
 - `getValue()` - Get current value
@@ -248,6 +249,12 @@ slider.num_steps = 5;
 // Read value
 var volume = slider.getValue();
 audio_master_gain(volume / 100);
+
+// Assign callback function
+button.interaction_end_function = function() {
+    show_debug_message($"Slider Released  {string(current_value)}");
+    // Your code here
+};
 ```
 
 ---
@@ -292,6 +299,8 @@ spinner.visible = false;
 - `overflow_behaviour` - "scroll" (horizontal) or "wrap" (multiline, default)
 - `expected_input` - "all", "int", or "real" (input validation)
 - `editable` - Allow user to edit (default: true)
+- `interaction_end_function` - Function to execute when the Textbox interaction ends
+
 
 **Key Methods:**
 - `updateText(text, isLocalised)` - Update displayed text
@@ -310,6 +319,12 @@ textbox.expected_input = "int";
 
 // Update text programmatically
 textbox.updateText("New text here", false);
+
+// Assign callback function
+button.interaction_end_function = function() {
+    show_debug_message("Textbox Interaction End");
+    // Your code here
+};
 ```
 
 ---

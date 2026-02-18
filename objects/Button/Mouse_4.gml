@@ -1,3 +1,5 @@
+/// @description Apply press scale to the button sprite, icon, and font, and mark as pressed
+
 if(prevent_clickthrough){
 	exit;
 }

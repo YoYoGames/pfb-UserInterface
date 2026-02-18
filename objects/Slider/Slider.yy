@@ -51,6 +51,7 @@
         "GMSprite",
       ],"listItems":[],"multiselect":false,"name":"sprite_index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"SliderBar","path":"sprites/SliderBar/SliderBar.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"SliderBar","varDescription":"The sprite that should be used for the Slider itself","varFriendlyName":"Slider Bar Sprite","varType":5,},
     {"$GMObjectProperty":"v2","%Name":"slider_bar_colour","filters":[],"listItems":[],"multiselect":false,"name":"slider_bar_colour","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"$FFCCCCCC","varDescription":"The colour of the Slider Bar Sprite","varFriendlyName":"Slider Bar Colour","varType":7,},
+    {"$GMObjectProperty":"v2","%Name":"interaction_end_function","filters":[],"listItems":[],"multiselect":false,"name":"interaction_end_function","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varDescription":"Optional function that should be called when the interaction with the slider ends (user releasing mouse)","varFriendlyName":"Interaction End Function","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

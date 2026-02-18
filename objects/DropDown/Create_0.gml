@@ -32,6 +32,8 @@ list_surf = undefined;
 
 clickthrough_list = ds_list_create();
 
+/// @desc This function scrolls the dropdown list by the specified amount
+/// @param {Real} _size The scroll amount (positive scrolls down, negative scrolls up)
 Scroll = function(_size){
     if(array_length(items) > shown_items){
         percentage = clamp(percentage+_size,0,1-(step_size*shown_items));
@@ -39,12 +41,13 @@ Scroll = function(_size){
     }
 }
 
+/// @desc This function determines whether the dropdown should open upward or downward based on available space
 SetDirection = function(){
 	// check if the dropdown would be outside the view/room, then flip direction if required
 	var _cam = view_get_camera(view_current);
 	var _outside_view = false;
 	var _outside_room = false;
-	
+
 	if(_cam != -1) && view_enabled{
 		var _y = camera_get_view_y(_cam);
 		var _h = camera_get_view_height(_cam);
@@ -56,7 +59,7 @@ SetDirection = function(){
 			_outside_room = true;
 		}
 	}
-	
+
     if(_outside_room) || (_outside_view){
         dropdown_direction = "Up";
         dd_offset = dd_h+(sprite_height/2);
@@ -67,6 +70,7 @@ SetDirection = function(){
 }
 
 
+/// @desc This function recalculates the dropdown list dimensions based on items and recreates the surface
 ResizeList = function() {
     draw_set_font(font);
     for(var i=0;i<array_length(items);i++){
@@ -77,27 +81,18 @@ ResizeList = function() {
 	}
     item_h = sprite_height;
     list_w = sprite_width;
-    // auto expand list width to fit items - dropdown no longer hidden behind button
-    /*
-    for(var _i=0; _i<array_length(items); _i++){
-        var _w = string_width(items[_i]);
-        if(_w > list_w){
-            list_w = _w;
-        }
-    } 
-    */
     list_h = (array_length(items) * item_h);
     dd_w = list_w;
-    
+
     if(array_length(items) < shown_items){
         show_scroll = false;
         dd_h = list_h;
     } else {
         dd_h = (shown_items * (item_h));
     }
-    
+
     SetDirection();
-    
+
     step_size = item_h/list_h;
 	if(surface_exists(list_surf)){
 		surface_free(list_surf);
@@ -105,6 +100,8 @@ ResizeList = function() {
     list_surf = surface_create(list_w,list_h);
 }
 
+/// @desc This function populates the dropdown with a new array of items and resizes the list
+/// @param {Array} _list The array of items to populate the dropdown with
 FillList = function(_list){
     array_resize(items,0);
     for(var l=0;l<array_length(_list);l++){

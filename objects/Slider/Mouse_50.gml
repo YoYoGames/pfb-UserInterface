@@ -1,3 +1,5 @@
+/// @description Update slider thumb position based on mouse position while dragging
+
 if (has_focus){
     // Calculate the perpendicular intersection point on the slider
     // Vector from slider start to slider end

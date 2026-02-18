@@ -14,6 +14,7 @@ if(sprite_index == noone){
     }
 }
 
+/// @desc Default callback function that is called when the button is released (can be overridden by button_release)
 onRelease = function(){
     show_debug_message("Released");
 }

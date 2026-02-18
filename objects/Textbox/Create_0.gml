@@ -82,7 +82,7 @@ function setVerticalAlignmentPos()
 	}
 }
 
-/// @desc This function will set the bounds of the y-position of the Text Element to ensure that it is correctly shown within the confines of the Textbox
+/// @desc This function will calculate and set the boundary positions of the Textbox based on sprite dimensions and padding
 function setBounds()
 {
 	w2 = sprite_width/2;
@@ -96,7 +96,7 @@ function setBounds()
 	    middle: y,
 	    bottom: y+h2-vertical_padding
 	}
-	
+
 	text_box_width = bounds.right-bounds.left;
 	text_box_height = bounds.bottom-bounds.top;
 }
@@ -125,9 +125,9 @@ function recalculateTextPosition()
 	setVerticalAlignmentPos();
 }
 
-// Ensure that the string that is passed is of the type we are expecting
-// This implementation relies on the potentially incorrect characters being at the end of the string
-// as it will remove the last character of a string until it matches with our expected input type
+/// @desc This function validates and parses input string based on expected_input type ("all", "int", or "real")
+/// @param {String} _input_string The input string to validate and parse
+/// @returns {String} The validated string with invalid characters removed
 function ParseInput(_input_string)
 {
     // If the string is empty, just return
@@ -215,9 +215,9 @@ function colour_get_alpha(_colour)
     return _colour>>24;
 }
 
-/// @desc This function updated the text that is present in the texbox, it can either be a string that is set directly or it can be a localisation string name
-/// @param {String} _newText the string that should be shown, or the Localisation table entry name
-/// @param {Boolean} _isLocalised (default is false) whether the string should be considered a localisation_string
+/// @desc This function updates the text that is present in the textbox, it can either be a string that is set directly or it can be a localisation string name
+/// @param {String} _newText The string that should be shown, or the Localisation table entry name
+/// @param {Bool} isLocalised Whether the string should be considered a localisation_string (default is false)
 function updateText(_newText, isLocalised = false)
 { 
 	if (isLocalised){
@@ -228,6 +228,32 @@ function updateText(_newText, isLocalised = false)
 		text = _newText;
 	}
 	
+}
+
+/// @desc Default callback function that is called when the textbox loses focus (can be overridden by interaction_end_function)
+onInteractionEnd = function(){
+    show_debug_message("Textbox Interaction End");
+}
+
+/// @desc This function will handle what should happen when the textbox loses focus
+function endInteraction()
+{
+	hasFocus = false;
+    
+    // Clear the value of keyboard_string
+    keyboard_string = "";
+	
+	// If the user is on a mobile device
+	if (os_type == os_android || os_type == os_ios){
+		// Hide the virtual keyboard
+		keyboard_virtual_hide();
+	}
+	 
+    if(!is_undefined(interaction_end_function)){
+        method_call(interaction_end_function);
+    } else {
+        method_call(onInteractionEnd);
+    }
 }
 
 /// @desc This function will enable the virtual keyboard on the device, no change will occur if the virtual keyboard is already open

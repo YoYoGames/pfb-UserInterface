@@ -1,3 +1,5 @@
+/// @description Set focus if mouse is within the handle's hitbox
+
 if(prevent_clickthrough){
 	exit;
 }

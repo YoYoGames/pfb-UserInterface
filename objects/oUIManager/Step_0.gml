@@ -1,3 +1,6 @@
+/// @description Handle keyboard shortcuts for equipment menu (Ctrl+E) and pause menu (Escape)
+
+// Toggle equipment/character screen with Ctrl+E
 if(keyboard_check(vk_control) && keyboard_check_released(ord("E"))){
     if(layer_get_visible("GMUI_Character")){
         CloseEquipment();
@@ -6,6 +9,7 @@ if(keyboard_check(vk_control) && keyboard_check_released(ord("E"))){
     }
 }
 
+// Open pause menu with Escape (only if not already paused)
 if(keyboard_check_released(vk_escape)){
 	if(!global.paused){
 		Pause();

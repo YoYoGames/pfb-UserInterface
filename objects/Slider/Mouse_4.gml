@@ -1,3 +1,5 @@
+/// @description Set the slider to have focus when clicked
+
 if(prevent_clickthrough){
 	exit;
 }

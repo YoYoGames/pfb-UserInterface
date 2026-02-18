@@ -1,3 +1,5 @@
+/// @description Toggle checked state and play animation in the appropriate direction
+
 if(pressed){
 	checked = !checked;
     if(checked){

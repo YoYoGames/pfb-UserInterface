@@ -1,3 +1,5 @@
+/// @description Handle touch drag gestures to move the scrollbar thumb
+
 dragging = true;
 var _drag_min = -thumb_offset;
 var _drag_max = bar_height-thumb_offset-thumb_height-end_padding-end_padding;

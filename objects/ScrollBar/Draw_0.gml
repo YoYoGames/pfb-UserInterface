@@ -1,3 +1,5 @@
+/// @description Draw the scrollbar background and the thumb at its current position
+
 draw_set_colour(bar_colour);
 draw_sprite_ext(bar_sprite,0,x,y,image_xscale,image_yscale,image_angle,bar_colour,image_alpha);
 var _tx = x-(thumb_width/2);

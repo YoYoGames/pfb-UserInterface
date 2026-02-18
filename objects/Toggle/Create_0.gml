@@ -1,3 +1,5 @@
+/// @description Create the toggle animation sequence and configure sprites, colors, and initial state
+
 unchecked_sprite = sprite_index;
 
 animation = layer_sequence_create(layer,x,y,animation_sequence);
@@ -31,8 +33,6 @@ if((colour_area == "Dot") || (colour_area == "Both")){
         _seq_struct.sequence.tracks[0].tracks[4].keyframes[1].channels[0].colour = background_default_colour;
     }
 }
-// unchecked
-//_seq_struct.sequence.tracks[1].tracks[4].keyframes[0].channels[0].colour = unchecked_colour;
 
 layer_sequence_pause(animation);
 

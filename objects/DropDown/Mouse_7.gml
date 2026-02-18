@@ -1,3 +1,5 @@
+/// @description Toggle dropdown open/closed and manage clickthrough prevention
+
 open = !open;
 if(open){
     opening = true;

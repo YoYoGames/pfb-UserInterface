@@ -1,3 +1,5 @@
+/// @description Select item if clicked in dropdown list, otherwise close the dropdown
+
 if(open){
     if((dropdown_direction == "Down") && (point_in_rectangle(mouse_x,mouse_y,bbox_right-dd_w,bbox_bottom,bbox_right,bbox_bottom+dd_h))){
         selected = (mouse_y - bbox_bottom + list_offset) div item_h;

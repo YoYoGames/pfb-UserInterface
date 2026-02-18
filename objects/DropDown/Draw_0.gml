@@ -1,3 +1,5 @@
+/// @description Draw the dropdown button and, if open, the dropdown list with all items
+
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_font(font);
@@ -22,7 +24,6 @@ if(open){
                 _shrink = (list_w/_w)*0.9;  // extra 10% smaller to add padding
             }
             draw_text_transformed(list_w/2,(item_h/2)+(i*(item_h)),items[i],font_scale*_shrink,font_scale*_shrink,0);
-           // draw_line_width(list_w*0.1,item_h*(i+1),list_w-(list_w*0.1),item_h*(i+1),1);
         }
     surface_reset_target();
     

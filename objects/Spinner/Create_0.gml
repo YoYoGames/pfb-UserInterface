@@ -1,3 +1,5 @@
+/// @description Create the spinner animation sequence and configure its sprite, scale, angle, speed, and color
+
 animation = layer_sequence_create(layer,x,y,animation_sequence);
 layer_sequence_xscale(animation,image_xscale);
 layer_sequence_yscale(animation,image_yscale);

@@ -1,3 +1,5 @@
+/// @description Reset opening/closing flags and restore clickthrough state for overlapping UI elements
+
 if(opening){
     opening = false;
 }
