@@ -4,10 +4,10 @@ if(prevent_clickthrough){
 	exit;
 }
 
-var _instance_id = collision_point(mouse_x, mouse_y, Textbox, false, false);
+var _mouseOverSelf = collision_point(mouse_x, mouse_y, id, false, false);
 
 // If the user has clicked and is now releasing with the mouse still over the text box
-if (_instance_id == self.id){
+if (_mouseOverSelf != noone){
     if (clickInitiated){
         hasFocus = true;
     
@@ -21,17 +21,18 @@ if (_instance_id == self.id){
     }
 } else {
     hasFocus = false;
-    
-    if (_instance_id == noone){
-        // Clear the value of keyboard_string
-        keyboard_string = "";
+
+	// If the user is on a mobile device
+	if (os_type == os_android || os_type == os_ios){
+		// 
+		var _mouseOverAny = collision_point(mouse_x, mouse_y, all, false, false);
 		
-		// If the user is on a mobile device
-		if (os_type == os_android || os_type == os_ios){
+		if (_mouseOverAny == noone)
+		{
 			// Hide the virtual keyboard
 			keyboard_virtual_hide();
 		}
-    }
+	}
 }
 
 clickInitiated = false;
