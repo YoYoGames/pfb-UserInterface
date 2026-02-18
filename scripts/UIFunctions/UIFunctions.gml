@@ -126,8 +126,12 @@ function ApplyOptions(){
     
 	// Set Resolution
 	if(!is_undefined(global.control_resolution)){
-        window_set_size(global.resolutions[global.control_resolution.selected][0],global.resolutions[global.control_resolution.selected][1]);
-        global.resolution_w = window_get_width();
+		// If the os_type is not a mobile device
+		if (os_type != os_android && os_type != os_ios){
+			window_set_size(global.resolutions[global.control_resolution.selected][0],global.resolutions[global.control_resolution.selected][1]);
+		}
+		
+		global.resolution_w = window_get_width();
         global.resolution_h = window_get_height();
         window_center();
         if((window_get_x() < 0) || (window_get_y() < 0)){
