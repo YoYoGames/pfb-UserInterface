@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"Textbox1",
   "bboxMode":0,
-  "bbox_bottom":63,
+  "bbox_bottom":-1,
   "bbox_left":0,
-  "bbox_right":63,
+  "bbox_right":-1,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"37d6b825-2c46-4b0a-a8e4-8a4577ed9fc1","name":"37d6b825-2c46-4b0a-a8e4-8a4577ed9fc1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5fe27e49-9b35-4721-be32-3b54bb75ee23","name":"5fe27e49-9b35-4721-be32-3b54bb75ee23","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":64,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"16c6a669-8faa-42b9-96f8-719e04e91135","blendMode":0,"displayName":"default","isLocked":false,"name":"16c6a669-8faa-42b9-96f8-719e04e91135","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"a980f441-d149-443d-8c29-4c253cefae49","blendMode":0,"displayName":"default","isLocked":false,"name":"a980f441-d149-443d-8c29-4c253cefae49","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"Textbox1",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"37d6b825-2c46-4b0a-a8e4-8a4577ed9fc1","path":"sprites/Textbox1/Textbox1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b7b68d2e-ee15-4e84-9f5d-6ac14a627fc7","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5fe27e49-9b35-4721-be32-3b54bb75ee23","path":"sprites/Textbox1/Textbox1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"3480f025-10b3-4379-9d06-c83ab1bfba4d","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

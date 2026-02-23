@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"Checkbox",
   "bboxMode":0,
-  "bbox_bottom":39,
+  "bbox_bottom":-1,
   "bbox_left":0,
-  "bbox_right":39,
+  "bbox_right":-1,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"c99e3c80-1b8c-46ae-826c-287d6a26bfab","name":"c99e3c80-1b8c-46ae-826c-287d6a26bfab","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"96887cac-83d0-48ea-8efb-6556b696ff5a","name":"96887cac-83d0-48ea-8efb-6556b696ff5a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":40,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"55173040-abf8-440c-8aec-30c1e458d3b2","blendMode":0,"displayName":"default","isLocked":false,"name":"55173040-abf8-440c-8aec-30c1e458d3b2","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"2de80b09-4e8a-4117-adcd-1c90ad34c103","blendMode":0,"displayName":"default","isLocked":false,"name":"2de80b09-4e8a-4117-adcd-1c90ad34c103","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"Checkbox",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c99e3c80-1b8c-46ae-826c-287d6a26bfab","path":"sprites/Checkbox/Checkbox.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0e4f40b8-cc85-4046-8c87-f9bf168d70da","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"96887cac-83d0-48ea-8efb-6556b696ff5a","path":"sprites/Checkbox/Checkbox.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"14b2913c-a799-47fc-afb0-59913a119d15","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

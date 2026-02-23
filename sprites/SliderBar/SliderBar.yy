@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"SliderBar",
   "bboxMode":0,
-  "bbox_bottom":11,
+  "bbox_bottom":-1,
   "bbox_left":0,
-  "bbox_right":127,
+  "bbox_right":-1,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"018af5ac-d27d-459a-bfdb-d1b3b8d115db","name":"018af5ac-d27d-459a-bfdb-d1b3b8d115db","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0b2d8485-140f-4e16-954c-8760879c7533","name":"0b2d8485-140f-4e16-954c-8760879c7533","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":12,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"ed15d7e9-492b-4d64-bfa7-1720a4af9a44","blendMode":0,"displayName":"default","isLocked":false,"name":"ed15d7e9-492b-4d64-bfa7-1720a4af9a44","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"48cff131-2416-4f54-9f18-8d5bea6a82a7","blendMode":0,"displayName":"default","isLocked":false,"name":"48cff131-2416-4f54-9f18-8d5bea6a82a7","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"SliderBar",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"018af5ac-d27d-459a-bfdb-d1b3b8d115db","path":"sprites/SliderBar/SliderBar.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"ca318fa2-7e1e-4d2b-866a-5d400d08c7ea","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0b2d8485-140f-4e16-954c-8760879c7533","path":"sprites/SliderBar/SliderBar.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"637e9d65-834e-4571-9a7e-5ef6dbc99277","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
