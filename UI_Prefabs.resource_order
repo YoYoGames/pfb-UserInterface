@@ -84,6 +84,7 @@
     {"name":"Textbox1","order":20,"path":"sprites/Textbox1/Textbox1.yy",},
     {"name":"ToggleBack","order":21,"path":"sprites/ToggleBack/ToggleBack.yy",},
     {"name":"ToggleButton","order":26,"path":"sprites/ToggleButton/ToggleButton.yy",},
+    {"name":"ToggleFrame","order":32,"path":"sprites/ToggleFrame/ToggleFrame.yy",},
     {"name":"ToggleFront","order":23,"path":"sprites/ToggleFront/ToggleFront.yy",},
     {"name":"ToggleImage","order":24,"path":"sprites/ToggleImage/ToggleImage.yy",},
   ],

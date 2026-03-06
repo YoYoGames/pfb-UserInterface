@@ -129,6 +129,7 @@
     {"id":{"name":"Textbox1","path":"sprites/Textbox1/Textbox1.yy",},},
     {"id":{"name":"ToggleBack","path":"sprites/ToggleBack/ToggleBack.yy",},},
     {"id":{"name":"ToggleButton","path":"sprites/ToggleButton/ToggleButton.yy",},},
+    {"id":{"name":"ToggleFrame","path":"sprites/ToggleFrame/ToggleFrame.yy",},},
     {"id":{"name":"ToggleFront","path":"sprites/ToggleFront/ToggleFront.yy",},},
     {"id":{"name":"ToggleImage","path":"sprites/ToggleImage/ToggleImage.yy",},},
   ],

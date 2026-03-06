@@ -33,7 +33,7 @@
     {"$GMObjectProperty":"v2","%Name":"checked","filters":[],"listItems":[],"multiselect":false,"name":"checked","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varDescription":"Holds the current state of the checkbox","varFriendlyName":"Checked","varType":3,},
     {"$GMObjectProperty":"v2","%Name":"check_sprite","filters":[
         "GMSprite",
-      ],"listItems":[],"multiselect":false,"name":"check_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"ToggleButton","path":"sprites/ToggleButton/ToggleButton.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"ToggleButton","varDescription":"Sprite to use for the check within the toggle","varFriendlyName":"Check Sprite","varType":5,},
+      ],"listItems":[],"multiselect":false,"name":"check_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"ToggleFront","path":"sprites/ToggleFront/ToggleFront.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"ToggleFront","varDescription":"Sprite to use for the check within the toggle","varFriendlyName":"Check Sprite","varType":5,},
     {"$GMObjectProperty":"v2","%Name":"check_scale","filters":[],"listItems":[],"multiselect":false,"name":"check_scale","rangeEnabled":true,"rangeMax":5.0,"rangeMin":0.1,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varDescription":"Scale to draw the check at","varFriendlyName":"Check Scale","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"check_bg","filters":[
         "GMSprite",
@@ -43,7 +43,7 @@
       ],"listItems":[],"multiselect":false,"name":"animation_sequence","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"qToggle","path":"sequences/qToggle/qToggle.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"qToggle","varDescription":"The Sequence used to display and animate the toggle","varFriendlyName":"Animation","varType":5,},
     {"$GMObjectProperty":"v2","%Name":"frame","filters":[
         "GMSprite",
-      ],"listItems":[],"multiselect":false,"name":"frame","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"ToggleFront","path":"sprites/ToggleFront/ToggleFront.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"ToggleFront","varDescription":"The sprite to use as a frame/boarder for the toggle","varFriendlyName":"Frame","varType":5,},
+      ],"listItems":[],"multiselect":false,"name":"frame","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"ToggleFrame","path":"sprites/ToggleFrame/ToggleFrame.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"ToggleFrame","varDescription":"The sprite to use as a frame/boarder for the toggle","varFriendlyName":"Frame","varType":5,},
     {"$GMObjectProperty":"v2","%Name":"colour_area","filters":[],"listItems":[
         "\"Background\"",
         "\"Dot\"",
