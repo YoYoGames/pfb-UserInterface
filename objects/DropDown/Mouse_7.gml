@@ -15,4 +15,9 @@ if(open){
 	}
 } else {
 	closing = true;
+	
+	// Free up the memory for the surface once we ensure that it exists
+	if (surface_exists(list_surf)){
+		surface_free(list_surf);
+	}
 }
