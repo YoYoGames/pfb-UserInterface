@@ -77,30 +77,54 @@ function GetAllText(){
 	var _layer_character = layer_get_flexpanel_node("GMUI_Character");
 	var _layer_gameover = layer_get_flexpanel_node("GMUI_GameOver");
 	var _layer_mainmenu = layer_get_flexpanel_node("GMUI_MainMenu");
+	
+	// Boolean values to ensure in the calls to AddLocalisedText below, we are not attempting to access non-existent flexpanels
+	var _confirmExists = !is_undefined(_layer_confirm);
+	var _pauseExists = !is_undefined(_layer_confirm);
+	var _optionsExists = !is_undefined(_layer_confirm);
+	var _characterExists = !is_undefined(_layer_confirm);
+	var _gameoverExists = !is_undefined(_layer_confirm);
+	var _mainmenuExists = !is_undefined(_layer_confirm);
 
 	// titles
-	global.ui_text.title_confirmation = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_confirm,"TitleText")),"title_confirmation");
-	global.ui_text.title_paused = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_pause,"TitleText")),"title_paused");
-	global.ui_text.title_options = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_options,"TitleText")),"title_options");
-	global.ui_text.title_equipment = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_character,"TitleText")),"title_equipment");
-	global.ui_text.title_gameover = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_gameover,"TitleText")),"title_gameover");
+	if (_confirmExists){
+		global.ui_text.title_confirmation = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_confirm,"TitleText")),"title_confirmation");
+	}
+	if (_pauseExists){
+		global.ui_text.title_paused = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_pause,"TitleText")),"title_paused");
+	}
+	if (_optionsExists){
+		global.ui_text.title_options = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_options,"TitleText")),"title_options");
+	}
+	if (_characterExists){
+		global.ui_text.title_equipment = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_character,"TitleText")),"title_equipment");
+	}
+	if (_gameoverExists){
+		global.ui_text.title_gameover = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_gameover,"TitleText")),"title_gameover");
+	}
 
 	// confirm
-	global.ui_text.text_sure = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_confirm,"TextBox"),"Text")),"text_sure");	
-
+	if (_confirmExists){
+		global.ui_text.text_sure = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_confirm,"TextBox"),"Text")),"text_sure");	
+	}
+	
 	// options
-	global.ui_text.options_volume = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_options,"Volume"),"Text")),"setting_volume");
-	global.ui_text.options_resolution = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_options,"Resolution"),"Text")),"setting_resolution");
-	global.ui_text.options_fullscreen = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_options,"Fullscreen"),"Text")),"setting_fullscreen");
-	global.ui_text.options_aa = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_options,"AA"),"Text")),"setting_antialiasing");
-	global.ui_text.options_language = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_options,"Language"),"Text")),"setting_language");
+	if (_optionsExists){
+		global.ui_text.options_volume = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_options,"Volume"),"Text")),"setting_volume");
+		global.ui_text.options_resolution = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_options,"Resolution"),"Text")),"setting_resolution");
+		global.ui_text.options_fullscreen = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_options,"Fullscreen"),"Text")),"setting_fullscreen");
+		global.ui_text.options_aa = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_options,"AA"),"Text")),"setting_antialiasing");
+		global.ui_text.options_language = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_options,"Language"),"Text")),"setting_language");
+	}
 	
 	// character
-	global.ui_text.character_health = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_character,"Health"),"Text")),"character_health");	
-	global.ui_text.character_armour = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_character,"Armour"),"Text")),"character_armour");	
-	global.ui_text.character_attack = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_character,"Attack"),"Text")),"character_attack");	
-	global.ui_text.character_movement = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_character,"Movement"),"Text")),"character_movement");	
-	global.ui_text.character_luck = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_character,"Luck"),"Text")),"character_luck");	
+	if (_characterExists){
+		global.ui_text.character_health = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_character,"Health"),"Text")),"character_health");	
+		global.ui_text.character_armour = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_character,"Armour"),"Text")),"character_armour");	
+		global.ui_text.character_attack = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_character,"Attack"),"Text")),"character_attack");	
+		global.ui_text.character_movement = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_character,"Movement"),"Text")),"character_movement");	
+		global.ui_text.character_luck = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_character,"Luck"),"Text")),"character_luck");	
+	}
 }
 
 Localisation_Load("localisation.csv");
