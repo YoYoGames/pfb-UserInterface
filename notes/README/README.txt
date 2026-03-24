@@ -32,12 +32,13 @@ A comprehensive collection of reusable UI components for GameMaker projects.
 
 [UI Manager Object](#UI-Manager-Object)\
 [Layer Management Functions](#Layer-Management-Functions)\
-[Integration Tips](#Integration-Tips)
+[Integration Tips](#Integration-Tips)\
+[Terms Glossary](#Terms-Glossary)
 
 ## Available Components
 
 ### Button
-**Purpose:** A clickable button with visual feedback and callback support.
+**Purpose:** A clickable button with visual feedback and [callback support](#Terms-Glossary).
 
 **Key Properties:**
 - `text` / `localisation_string` - Button text (inherited from oLocalised)
@@ -214,7 +215,7 @@ var content_offset = scroll_pos * max_scroll_height;
 ---
 
 ### Slider
-**Purpose:** A continuous value control with a draggable handle and callback support.
+**Purpose:** A continuous value control with a draggable handle and [callback support](#Terms-Glossary).
 
 **Key Properties:**
 - `min_value` - Minimum value (default: 0)
@@ -522,7 +523,7 @@ Confirm(game_end);  // Yes executes game_end, No closes dialog
 ```
 
 **Notes:**
-- Yes/No button callbacks are set dynamically via `Button_Release` property
+- Yes/No button [callbacks](#Terms-Glossary) are set dynamically via `Button_Release` property
 - No button defaults to `CancelConfirmation()` if not specified
 - Confirmation text can be changed via FlexPanel text elements
 
@@ -612,10 +613,47 @@ Localisation_Update_All();
 
 1. **UI Layers**: Place UI components on layers prefixed with `GMUI_` for best compatibility
 2. **FlexPanel**: Components work well with GameMaker's FlexPanel layout system
-3. **Callbacks**: Use function references for button callbacks, not strings
+3. **Callbacks**: Use function references for button [callbacks](#Terms-Glossary), not strings
 4. **Color Format**: Colors use GameMaker's hex format: #AARRGGBB (alpha, red, green, blue)
 5. **Fonts**: Default fonts are `fUI` and `fUI_Bold` (included)
 6. **Layer Visibility**: Use `layer_set_visible()` to show/hide UI layers, never `instance_deactivate`
 7. **Global State**: UI system uses global variables (`global.gmui_paused`, `global.gmui_volume`, etc.) for state management
 
 ---
+
+## Terms Glossary
+
+**Callback**: A function passed into code rather than explicitly set so it can be called later.\
+For example, the [Button](#Button) object has a variable 'button_release' that can be set to any function that you choose and will define what should happen when the button is clicked.\
+From the example usage of Button:
+```gml
+button.button_release = function() {
+    show_debug_message("Button clicked!");
+    // Your code here
+};
+```
+Another example that sets the `button_release` to a callback function that then contains a callback function:
+```gml
+// Turn off lights
+function turnOffLights(){
+	oHouse.lights.illuminated = false
+}
+
+// Turn on red lights
+function redAlert(){
+	oHouse.lights.colour = #FF0000
+	oHouse.lights.illuminated = true
+}
+
+function updateLights(_message, _callbackFunction) {
+  show_message(_message);
+  _callbackFunction(); // The callback is called here
+}
+
+// Change the function based on the button type
+if (isPowerswitch){
+	button.button_release = updateLights("Powering down", turnOffLights)
+} else if (isPanicButton){
+	button.button_release = updateLights("DANGER", redAlert)
+}
+```
