@@ -9,4 +9,4 @@ gml_pragma("MarkUILayerAsUsed","GMUI_Pause");
 gml_pragma("MarkUILayerAsUsed","GMUI_MainMenu");
 
 // Initialize the menu to return to when closing other menus
-global.previous_menu = "GMUI_MainMenu";
+global.gmui_previous_menu = "GMUI_MainMenu";

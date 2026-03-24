@@ -1,26 +1,26 @@
 // Global game settings
-global.volume = 50;
-global.resolution_w = window_get_width();
-global.resolution_h = window_get_height();
-global.fullscreen = window_get_fullscreen();
-global.aa = gpu_get_texfilter();
-global.shadows = false;
+global.gmui_volume = 50;
+global.gmui_resolution_w = window_get_width();
+global.gmui_resolution_h = window_get_height();
+global.gmui_fullscreen = window_get_fullscreen();
+global.gmui_aa = gpu_get_texfilter();
+global.gmui_shadows = false;
 
 // Available resolution options
-global.resolutions = [ [1366,768], [1920,1080], [2560,1440], [3840,2160] ];
+global.gmui_resolutions = [ [1366,768], [1920,1080], [2560,1440], [3840,2160] ];
 
 // UI text localisation mapping
-global.ui_text = {};
+global.gmui_text = {};
 
 // Game pause state
-global.paused = false;
+global.gmui_paused = false;
 
 // References to UI control instances in the Options menu
-global.control_volume = undefined;
-global.control_resolution = undefined;
-global.control_fullscreen = undefined;
-global.control_aa = undefined;
-global.control_language = undefined;
+global.gmui_control_volume = undefined;
+global.gmui_control_resolution = undefined;
+global.gmui_control_fullscreen = undefined;
+global.gmui_control_aa = undefined;
+global.gmui_control_language = undefined;
 
 #export ApplyOptions, CancelConfirmation, CancelOptions, OpenEquipment, OpenOptions, CloseEquipment, Confirm, ConfirmQuit, ExitGame, Pause, Quit
 
@@ -71,59 +71,59 @@ function FindControls(){
 	var _controls = flexpanel_node_get_child(_layer, "Inner");
 
 	var _volume_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"Volume"),"Control");
-	global.control_volume = GetInstanceIDFromElement(flexpanel_node_get_struct(_volume_fp),Slider);
+	global.gmui_control_volume = GetInstanceIDFromElement(flexpanel_node_get_struct(_volume_fp),Slider);
     var _resolution_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"Resolution"),"Control");
-	global.control_resolution = GetInstanceIDFromElement(flexpanel_node_get_struct(_resolution_fp),DropDown);
+	global.gmui_control_resolution = GetInstanceIDFromElement(flexpanel_node_get_struct(_resolution_fp),DropDown);
     var _fullscreen_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"Fullscreen"),"Control");
-	global.control_fullscreen = GetInstanceIDFromElement(flexpanel_node_get_struct(_fullscreen_fp),CheckBox);
+	global.gmui_control_fullscreen = GetInstanceIDFromElement(flexpanel_node_get_struct(_fullscreen_fp),CheckBox);
     var _aa_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"AA"),"Control");
-	global.control_aa = GetInstanceIDFromElement(flexpanel_node_get_struct(_aa_fp),CheckBox);
+	global.gmui_control_aa = GetInstanceIDFromElement(flexpanel_node_get_struct(_aa_fp),CheckBox);
     var _language_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"Language"),"Control");
-	global.control_language = GetInstanceIDFromElement(flexpanel_node_get_struct(_language_fp),DropDown);
+	global.gmui_control_language = GetInstanceIDFromElement(flexpanel_node_get_struct(_language_fp),DropDown);
 }
 
 /// @desc Populate all the various available options
 function FillOptions(){
 	// Get current volume
-	if(!is_undefined(global.control_volume)){
-		global.control_volume.current_value = global.volume;
+	if(!is_undefined(global.gmui_control_volume)){
+		global.gmui_control_volume.current_value = global.gmui_volume;
 	}
 	// Get current resolution
     var _selected = undefined;
-	if(!is_undefined(global.control_resolution)){
+	if(!is_undefined(global.gmui_control_resolution)){
         var _list = array_create(0,0);
-        for(var _l=0; _l < array_length(global.resolutions); _l++){
-            _list[_l] = $"{global.resolutions[_l][0]} x {global.resolutions[_l][1]}";
-            if((global.resolutions[_l][0] == global.resolution_w) && (global.resolutions[_l][1] == global.resolution_h)){
+        for(var _l=0; _l < array_length(global.gmui_resolutions); _l++){
+            _list[_l] = $"{global.gmui_resolutions[_l][0]} x {global.gmui_resolutions[_l][1]}";
+            if((global.gmui_resolutions[_l][0] == global.gmui_resolution_w) && (global.gmui_resolutions[_l][1] == global.gmui_resolution_h)){
                 _selected = _l;
             }
         }
-		global.control_resolution.FillList(_list);
-        global.control_resolution.selected = _selected;
+		global.gmui_control_resolution.FillList(_list);
+        global.gmui_control_resolution.selected = _selected;
 	}
 	
 	// Get current fullscreen state
-	if(!is_undefined(global.control_fullscreen)){
-		global.control_fullscreen.checked = global.fullscreen;
+	if(!is_undefined(global.gmui_control_fullscreen)){
+		global.gmui_control_fullscreen.checked = global.gmui_fullscreen;
 	}
 	
 	// Get current AA state
-	if(!is_undefined(global.control_aa)){
-		global.control_aa.checked = global.aa;
+	if(!is_undefined(global.gmui_control_aa)){
+		global.gmui_control_aa.checked = global.gmui_aa;
 	}
 	
 	// Get current language
     _selected = undefined;
-	if(!is_undefined(global.control_language)){
+	if(!is_undefined(global.gmui_control_language)){
         var _list = array_create(0,0);
-        for(var _l=0; _l < array_length(global.languages); _l++){
-            _list[_l] = $"{global.languages[_l]}";
-            if(global.language == _list[_l]){
+        for(var _l=0; _l < array_length(global.gmui_languages); _l++){
+            _list[_l] = $"{global.gmui_languages[_l]}";
+            if(global.gmui_language == _list[_l]){
                 _selected = _l;
             }
         }
-		global.control_language.FillList(_list);
-        global.control_language.selected = _selected;
+		global.gmui_control_language.FillList(_list);
+        global.gmui_control_language.selected = _selected;
 	}
 	
 	
@@ -133,19 +133,19 @@ function FillOptions(){
 /// @desc Close the options menu and appy changes
 function ApplyOptions(){
 	// Set Volume
-    if(!is_undefined(global.control_volume)){
-	   global.volume = global.control_volume.current_value;
+    if(!is_undefined(global.gmui_control_volume)){
+	   global.gmui_volume = global.gmui_control_volume.current_value;
     }
     
 	// Set Resolution
-	if(!is_undefined(global.control_resolution)){
+	if(!is_undefined(global.gmui_control_resolution)){
 		// If the os_type is not a mobile device
 		if (os_type != os_android && os_type != os_ios){
-			window_set_size(global.resolutions[global.control_resolution.selected][0],global.resolutions[global.control_resolution.selected][1]);
+			window_set_size(global.gmui_resolutions[global.gmui_control_resolution.selected][0],global.gmui_resolutions[global.gmui_control_resolution.selected][1]);
 		}
 		
-		global.resolution_w = window_get_width();
-        global.resolution_h = window_get_height();
+		global.gmui_resolution_w = window_get_width();
+        global.gmui_resolution_h = window_get_height();
         window_center();
         if((window_get_x() < 0) || (window_get_y() < 0)){
             application_get_position()
@@ -154,20 +154,20 @@ function ApplyOptions(){
     }
     
 	// Set Fullscreen
-	if(!is_undefined(global.control_fullscreen)){
-        global.fullscreen = global.control_fullscreen.checked;
-		window_set_fullscreen(global.fullscreen);
+	if(!is_undefined(global.gmui_control_fullscreen)){
+        global.gmui_fullscreen = global.gmui_control_fullscreen.checked;
+		window_set_fullscreen(global.gmui_fullscreen);
 	}
     
 	// Set AA
-	if(!is_undefined(global.control_aa)){
-        global.aa = global.control_aa.checked;
-		gpu_set_tex_filter(global.aa);
+	if(!is_undefined(global.gmui_control_aa)){
+        global.gmui_aa = global.gmui_control_aa.checked;
+		gpu_set_tex_filter(global.gmui_aa);
 	}
     
 	// Set Language
-	if(!is_undefined(global.control_language)){
-        global.language = global.languages[global.control_language.selected];
+	if(!is_undefined(global.gmui_control_language)){
+        global.gmui_language = global.gmui_languages[global.gmui_control_language.selected];
 		Localisation_Update_All();
     }
 	
@@ -233,11 +233,11 @@ function ExitGame(){
 
 /// @desc Pause/unpause the game
 function Pause(){
-	global.previous_menu = "GMUI_Pause";
-	global.paused = !global.paused;
+	global.gmui_previous_menu = "GMUI_Pause";
+	global.gmui_paused = !global.gmui_paused;
 	HideAllUI();
-	layer_set_visible("GMUI_Pause",global.paused);
-	if(global.paused){
+	layer_set_visible("GMUI_Pause",global.gmui_paused);
+	if(global.gmui_paused){
 		// pause all your game logic from here
 	} else {
 		// unpause all your game logic here
@@ -253,7 +253,7 @@ function ConfirmQuit(){
 function Quit(){
 	HideAllUI();
 	layer_set_visible("GMUI_MainMenu",true);
-	global.paused = false;
+	global.gmui_paused = false;
 }
 
 /// @desc Hide all the UI Layers

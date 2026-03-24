@@ -11,7 +11,7 @@ if(keyboard_check(vk_control) && keyboard_check_released(ord("E"))){
 
 // Open pause menu with Escape (only if not already paused)
 if(keyboard_check_released(vk_escape)){
-	if(!global.paused){
+	if(!global.gmui_paused){
 		Pause();
 	}
 }

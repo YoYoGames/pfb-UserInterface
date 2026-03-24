@@ -436,7 +436,7 @@ Pause();
 ConfirmQuit();
 ```
 
-**Managed by:** `global.paused` variable tracks pause state.
+**Managed by:** `global.gmui_paused` variable tracks pause state.
 
 ---
 
@@ -469,9 +469,9 @@ FillOptions();
 ```
 
 **Notes:**
-- Uses `global.control_*` variables for quick access to UI elements
+- Uses `global.gmui_control_*` variables for quick access to UI elements
 - Automatically localizes all text when language changes
-- Settings stored in global variables: `global.volume`, `global.resolution_w/h`, `global.fullscreen`, `global.aa`
+- Settings stored in global variables: `global.gmui_volume`, `global.gmui_resolution_w/h`, `global.gmui_fullscreen`, `global.gmui_aa`
 
 ---
 
@@ -558,7 +558,7 @@ layer_set_visible("GMUI_GameOver", true);
 
 1. **Layer Registration (Create Event):**
    - Marks all GMUI_* layers as used with `gml_pragma()` to prevent GameMaker from stripping them during compilation
-   - Initializes `global.previous_menu` to "GMUI_MainMenu" for menu navigation tracking
+   - Initializes `global.gmui_previous_menu` to "GMUI_MainMenu" for menu navigation tracking
 
 2. **Keyboard Shortcuts (Step Event):**
    - `Ctrl + E`: Toggles the character/equipment screen (GMUI_Character)
@@ -575,7 +575,7 @@ layer_set_visible("GMUI_GameOver", true);
 // The object handles everything automatically
 
 // The manager sets up this global variable:
-// global.previous_menu - Tracks which menu to return to (default: "GMUI_MainMenu")
+// global.gmui_previous_menu - Tracks which menu to return to (default: "GMUI_MainMenu")
 ```
 
 **Important Notes:**
@@ -616,6 +616,6 @@ Localisation_Update_All();
 4. **Color Format**: Colors use GameMaker's hex format: #AARRGGBB (alpha, red, green, blue)
 5. **Fonts**: Default fonts are `fUI` and `fUI_Bold` (included)
 6. **Layer Visibility**: Use `layer_set_visible()` to show/hide UI layers, never `instance_deactivate`
-7. **Global State**: UI system uses global variables (`global.paused`, `global.volume`, etc.) for state management
+7. **Global State**: UI system uses global variables (`global.gmui_paused`, `global.gmui_volume`, etc.) for state management
 
 ---
