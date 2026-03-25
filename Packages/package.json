@@ -1,9 +1,9 @@
 {
   "name": "@gm-prefabs/UI",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Basic user interface components",
   "files": [
-    "io.gamemaker.userinterface-1.0.0.yymps"
+    "io.gamemaker.userinterface-1.0.1.yymps"
   ],
   "keywords": [
     "GameMaker",
