@@ -544,7 +544,7 @@ Confirm(game_end);  // Yes executes game_end, No closes dialog
 layer_set_visible("GMUI_GameOver", true);
 
 // Hide other UI first
-HideAllUI();
+SetVisibilityAllUI(false);
 layer_set_visible("GMUI_GameOver", true);
 ```
 
@@ -594,7 +594,7 @@ The project includes helper functions in `UIFunctions.gml` for managing layers:
 
 ```gml
 // Hide all UI layers at once
-HideAllUI();
+SetVisibilityAllUI(false);
 
 // Update all localized text across all layers
 Localisation_Update_All();

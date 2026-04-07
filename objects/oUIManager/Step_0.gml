@@ -2,11 +2,13 @@
 
 // Toggle equipment/character screen with Ctrl+E
 if(keyboard_check(vk_control) && keyboard_check_released(ord("E"))){
-    if(layer_get_visible("GMUI_Character")){
-        CloseEquipment();
-    } else {
-        OpenEquipment();
-    }
+	if (layer_exists("GMUI_Character")){
+		if(layer_get_visible("GMUI_Character")){
+        	CloseEquipment();
+    	} else {
+    	    OpenEquipment();
+    	}
+	}
 }
 
 // Open pause menu with Escape (only if not already paused)

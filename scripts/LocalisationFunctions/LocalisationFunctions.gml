@@ -16,12 +16,7 @@ function SetLocalisationFromStruct(_name,_value){
 
 function Localisation_Update_All(){
 	// enable all ui layers so deactivated objects are localised
-	layer_set_visible("GMUI_Confirmation",true);
-	layer_set_visible("GMUI_Pause",true);
-	layer_set_visible("GMUI_Options",true);
-	layer_set_visible("GMUI_Character",true);
-	layer_set_visible("GMUI_GameOver",true);
-	layer_set_visible("GMUI_MainMenu",true);
+	SetVisibilityAllUI(true);
 	
 	// change all the parented objects
     with(oLocalised){ 
@@ -38,18 +33,27 @@ function Localisation_Update_All(){
 	struct_foreach(global.gmui_text, SetLocalisationFromStruct);
 	
 	// recalculate layouts incase changing the localisations would change things
-	flexpanel_calculate_layout(layer_get_flexpanel_node("GMUI_Confirmation"), , , flexpanel_direction.LTR);
-	flexpanel_calculate_layout(layer_get_flexpanel_node("GMUI_Pause"), , , flexpanel_direction.LTR);
-	flexpanel_calculate_layout(layer_get_flexpanel_node("GMUI_Options"), , , flexpanel_direction.LTR);
-	flexpanel_calculate_layout(layer_get_flexpanel_node("GMUI_Character"), , , flexpanel_direction.LTR);
-	flexpanel_calculate_layout(layer_get_flexpanel_node("GMUI_GameOver"), , , flexpanel_direction.LTR);
+	if (layer_exists("GMUI_Confirmation")){
+		flexpanel_calculate_layout(layer_get_flexpanel_node("GMUI_Confirmation"), , , flexpanel_direction.LTR);
+	}
+	if (layer_exists("GMUI_Pause")){
+		flexpanel_calculate_layout(layer_get_flexpanel_node("GMUI_Pause"), , , flexpanel_direction.LTR);
+	}
+	if (layer_exists("GMUI_Options")){
+		flexpanel_calculate_layout(layer_get_flexpanel_node("GMUI_Options"), , , flexpanel_direction.LTR);
+	}
+	if (layer_exists("GMUI_Character")){
+		flexpanel_calculate_layout(layer_get_flexpanel_node("GMUI_Character"), , , flexpanel_direction.LTR);
+	}
+	if (layer_exists("GMUI_GameOver")){
+		flexpanel_calculate_layout(layer_get_flexpanel_node("GMUI_GameOver"), , , flexpanel_direction.LTR);
+	}
 	
 	// disable all the layers again
-	layer_set_visible("GMUI_Confirmation",false);
-	layer_set_visible("GMUI_Pause",false);
-	layer_set_visible("GMUI_Options",false);
-	layer_set_visible("GMUI_Character",false);
-	layer_set_visible("GMUI_GameOver",false);
+	SetVisibilityAllUI(false)
+	
+	// enable the Main Menu
+	SetVisibilitySingleUI("GMUI_MainMenu", true)
 }
 
 
@@ -70,46 +74,53 @@ function Localisation_Load(_filename){
 }
 
 function GetAllText(){
-    // get all UI layers
-	var _layer_confirm = layer_get_flexpanel_node("GMUI_Confirmation");
-	var _layer_pause = layer_get_flexpanel_node("GMUI_Pause");
-	var _layer_options = layer_get_flexpanel_node("GMUI_Options");
-	var _layer_character = layer_get_flexpanel_node("GMUI_Character");
-	var _layer_gameover = layer_get_flexpanel_node("GMUI_GameOver");
-	var _layer_mainmenu = layer_get_flexpanel_node("GMUI_MainMenu");
+	// Initialise all of the layer values
+	var _layer_confirm, _layer_pause, _layer_options, _layer_character, _layer_gameover, _layer_mainmenu = false;
 	
-	// Boolean values to ensure in the calls to AddLocalisedText below, we are not attempting to access non-existent flexpanels
-	var _confirmExists = !is_undefined(_layer_confirm);
-	var _pauseExists = !is_undefined(_layer_confirm);
-	var _optionsExists = !is_undefined(_layer_confirm);
-	var _characterExists = !is_undefined(_layer_confirm);
-	var _gameoverExists = !is_undefined(_layer_confirm);
-	var _mainmenuExists = !is_undefined(_layer_confirm);
-
+	// get all UI layers
+	if (layer_exists("GMUI_Confirmation")){
+		_layer_confirm = layer_get_flexpanel_node("GMUI_Confirmation");
+	}
+	if (layer_exists("GMUI_Pause")){
+		_layer_pause = layer_get_flexpanel_node("GMUI_Pause");
+	}
+	if (layer_exists("GMUI_Options")){
+		_layer_options = layer_get_flexpanel_node("GMUI_Options");
+	}
+	if (layer_exists("GMUI_Character")){
+		_layer_character = layer_get_flexpanel_node("GMUI_Character");
+	}
+	if (layer_exists("GMUI_GameOver")){
+		_layer_gameover = layer_get_flexpanel_node("GMUI_GameOver");
+	}
+	if (layer_exists("GMUI_MainMenu")){
+		_layer_mainmenu = layer_get_flexpanel_node("GMUI_MainMenu");
+	}
+	
 	// titles
-	if (_confirmExists){
+	if (_layer_confirm){
 		global.gmui_text.title_confirmation = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_confirm,"TitleText")),"title_confirmation");
 	}
-	if (_pauseExists){
+	if (_layer_pause){
 		global.gmui_text.title_paused = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_pause,"TitleText")),"title_paused");
 	}
-	if (_optionsExists){
+	if (_layer_options){
 		global.gmui_text.title_options = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_options,"TitleText")),"title_options");
 	}
-	if (_characterExists){
+	if (_layer_character){
 		global.gmui_text.title_equipment = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_character,"TitleText")),"title_equipment");
 	}
-	if (_gameoverExists){
+	if (_layer_gameover){
 		global.gmui_text.title_gameover = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(_layer_gameover,"TitleText")),"title_gameover");
 	}
 
 	// confirm
-	if (_confirmExists){
+	if (_layer_confirm){
 		global.gmui_text.text_sure = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_confirm,"TextBox"),"Text")),"text_sure");	
 	}
 	
 	// options
-	if (_optionsExists){
+	if (_layer_options){
 		global.gmui_text.options_volume = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_options,"Volume"),"Text")),"setting_volume");
 		global.gmui_text.options_resolution = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_options,"Resolution"),"Text")),"setting_resolution");
 		global.gmui_text.options_fullscreen = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_options,"Fullscreen"),"Text")),"setting_fullscreen");
@@ -118,7 +129,7 @@ function GetAllText(){
 	}
 	
 	// character
-	if (_characterExists){
+	if (_layer_character){
 		global.gmui_text.character_health = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_character,"Health"),"Text")),"character_health");	
 		global.gmui_text.character_armour = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_character,"Armour"),"Text")),"character_armour");	
 		global.gmui_text.character_attack = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_character,"Attack"),"Text")),"character_attack");	

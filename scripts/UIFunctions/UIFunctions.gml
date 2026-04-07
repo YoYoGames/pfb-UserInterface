@@ -66,20 +66,23 @@ function GetTextElementId(_struct){
 
 /// @desc Locates and stores references to all control instances in the Options menu
 function FindControls(){
-    // Get a handle to the layer
-	var _layer = layer_get_flexpanel_node("GMUI_Options");
-	var _controls = flexpanel_node_get_child(_layer, "Inner");
+	if (layer_exists("GMUI_Options")){
+		// Get a handle to the layer
+		var _layer = layer_get_flexpanel_node("GMUI_Options");
+	
+		var _controls = flexpanel_node_get_child(_layer, "Inner");
 
-	var _volume_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"Volume"),"Control");
-	global.gmui_control_volume = GetInstanceIDFromElement(flexpanel_node_get_struct(_volume_fp),Slider);
-    var _resolution_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"Resolution"),"Control");
-	global.gmui_control_resolution = GetInstanceIDFromElement(flexpanel_node_get_struct(_resolution_fp),DropDown);
-    var _fullscreen_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"Fullscreen"),"Control");
-	global.gmui_control_fullscreen = GetInstanceIDFromElement(flexpanel_node_get_struct(_fullscreen_fp),CheckBox);
-    var _aa_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"AA"),"Control");
-	global.gmui_control_aa = GetInstanceIDFromElement(flexpanel_node_get_struct(_aa_fp),CheckBox);
-    var _language_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"Language"),"Control");
-	global.gmui_control_language = GetInstanceIDFromElement(flexpanel_node_get_struct(_language_fp),DropDown);
+		var _volume_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"Volume"),"Control");
+		global.gmui_control_volume = GetInstanceIDFromElement(flexpanel_node_get_struct(_volume_fp),Slider);
+    	var _resolution_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"Resolution"),"Control");
+		global.gmui_control_resolution = GetInstanceIDFromElement(flexpanel_node_get_struct(_resolution_fp),DropDown);
+    	var _fullscreen_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"Fullscreen"),"Control");
+		global.gmui_control_fullscreen = GetInstanceIDFromElement(flexpanel_node_get_struct(_fullscreen_fp),CheckBox);
+    	var _aa_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"AA"),"Control");
+		global.gmui_control_aa = GetInstanceIDFromElement(flexpanel_node_get_struct(_aa_fp),CheckBox);
+    	var _language_fp = flexpanel_node_get_child(flexpanel_node_get_child(_controls,"Language"),"Control");
+		global.gmui_control_language = GetInstanceIDFromElement(flexpanel_node_get_struct(_language_fp),DropDown);
+	}
 }
 
 /// @desc Populate all the various available options
@@ -173,21 +176,21 @@ function ApplyOptions(){
 	
 	
 	// Close options
-	layer_set_visible("GMUI_Options",false);
+	SetVisibilitySingleUI("GMUI_Options",false);
 }
 
 
 /// @desc Close the options menu without saving changes
 function CancelOptions(){
-	layer_set_visible("GMUI_Options",false);
-	layer_set_visible("GMUI_MainMenu",true);
+	SetVisibilitySingleUI("GMUI_Options",false);
+	SetVisibilitySingleUI("GMUI_MainMenu",true);
 }
 
 /// @desc Open the options menu
 function OpenOptions(){
 	if(layer_exists("GMUI_Options")){
-		HideAllUI();
-	    layer_set_visible("GMUI_Options",true);
+		SetVisibilityAllUI(false);
+	    SetVisibilitySingleUI("GMUI_Options",true);
 		FindControls();
 		GetAllText();
 		FillOptions();
@@ -196,12 +199,12 @@ function OpenOptions(){
 
 /// @desc Close the equipment/character screen
 function CloseEquipment(){
-    layer_set_visible("GMUI_Character",false);
+    SetVisibilitySingleUI("GMUI_Character",false);
 }
 
 /// @desc Open the equipment/character screen
 function OpenEquipment(){
-    layer_set_visible("GMUI_Character",true);
+    SetVisibilitySingleUI("GMUI_Character",true);
 }
 
 /// @desc Opens the confirmation message box 
@@ -209,7 +212,7 @@ function OpenEquipment(){
 /// @param {function} _no The function to call if the user selects No - Defaults to closing the box without doing anything
 function Confirm(_yes, _no=CancelConfirmation){
 	if(layer_exists("GMUI_Confirmation")){
-		layer_set_visible("GMUI_Confirmation",true);
+		SetVisibilitySingleUI("GMUI_Confirmation",true);
 		var _layer = layer_get_flexpanel_node("GMUI_Confirmation");
 		var _yes_button = GetInstanceIDFromElement(flexpanel_node_get_struct(flexpanel_node_get_child(_layer,"Yes")),Button);
 		var _no_button = GetInstanceIDFromElement(flexpanel_node_get_struct(flexpanel_node_get_child(_layer,"No")),Button);
@@ -223,7 +226,7 @@ function Confirm(_yes, _no=CancelConfirmation){
 
 /// @desc Close the confirmation box without doing anything
 function CancelConfirmation(){
-	layer_set_visible("GMUI_Confirmation",false);
+	SetVisibilitySingleUI("GMUI_Confirmation",false);
 }
 
 /// @desc Close the game
@@ -235,8 +238,8 @@ function ExitGame(){
 function Pause(){
 	global.gmui_previous_menu = "GMUI_Pause";
 	global.gmui_paused = !global.gmui_paused;
-	HideAllUI();
-	layer_set_visible("GMUI_Pause",global.gmui_paused);
+	SetVisibilityAllUI(false);
+	SetVisibilitySingleUI("GMUI_Pause",global.gmui_paused);
 	if(global.gmui_paused){
 		// pause all your game logic from here
 	} else {
@@ -251,17 +254,40 @@ function ConfirmQuit(){
 
 /// @desc Quit the current game and return to the main menu
 function Quit(){
-	HideAllUI();
-	layer_set_visible("GMUI_MainMenu",true);
+	SetVisibilityAllUI(false);
+	SetVisibilitySingleUI("GMUI_MainMenu",true);
 	global.gmui_paused = false;
 }
 
-/// @desc Hide all the UI Layers
-function HideAllUI(){
-	layer_set_visible("GMUI_MainMenu",false);
-	layer_set_visible("GMUI_Confirmation",false);
-	layer_set_visible("GMUI_Options",false);
-	layer_set_visible("GMUI_Character",false);
-	layer_set_visible("GMUI_GameOver",false);
-	layer_set_visible("GMUI_Pause",false);
+/// @desc Set the visibility of all the UI Layers
+/// @param {boolean} _visibility Whether the layers should be set to visible or not
+function SetVisibilityAllUI(_visibility){
+	
+	if (layer_exists("GMUI_MainMenu")){
+		layer_set_visible("GMUI_MainMenu",_visibility);
+	}
+	if (layer_exists("GMUI_Confirmation")){
+		layer_set_visible("GMUI_Confirmation",_visibility);
+	} 
+	if (layer_exists("GMUI_Options")){
+		layer_set_visible("GMUI_Options",_visibility);
+	}
+	if (layer_exists("GMUI_Character")){
+		layer_set_visible("GMUI_Character",_visibility);
+	}
+	if (layer_exists("GMUI_GameOver")){
+		layer_set_visible("GMUI_GameOver",_visibility);
+	}
+	if (layer_exists("GMUI_Pause")){
+		layer_set_visible("GMUI_Pause",_visibility);
+	}
+}
+
+/// @desc Set the visibility of all the UI Layers
+/// @param {string} _flexPanelName The name of the Flexpanel that should be updated (if it exists)
+/// @param {boolean} _visibility Whether the layers should be set to visible or not
+function SetVisibilitySingleUI(_flexPanelName, _visibility){
+	if (layer_exists(_flexPanelName)){
+		layer_set_visible(_flexPanelName,_visibility);
+	}
 }
