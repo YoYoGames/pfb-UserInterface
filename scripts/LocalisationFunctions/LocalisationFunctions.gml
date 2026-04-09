@@ -1,10 +1,22 @@
 global.gmui_language = "English";
 global.gmui_languages = array_create(0,0);
 global.gmui_language_strings = {};
+global.gmui_language_loaded = false;
+global.gmui_language_file = "localisation.csv"
 
-#export GetLocalisation, Localisation_Update_All
+#export GetLocalisation, Localisation_Update_All, SetLoaclisationFile
+
+/// @desc Use to change the file that will be used for localisation lookups
+/// @param {String} _filename The filename of the csv to use for localisation strings
+function SetLoaclisationFile(_filename){
+	global.gmui_language_file = _filename
+}
 
 function GetLocalisation(_string_name,_language=global.gmui_language){
+	// make sure that the language strings have been loaded
+	if(!global.gmui_language_loaded){
+		Localisation_Load(global.gmui_language_file);
+	}
     var _lang = variable_struct_get(global.gmui_language_strings,_language)
     var _string = variable_struct_get(_lang,_string_name);
     return _string;
@@ -71,6 +83,7 @@ function Localisation_Load(_filename){
             variable_struct_set(variable_struct_get(global.gmui_language_strings,_name),_file[# 0, _s], _file[#_l, _s]);
         }
     }
+	global.gmui_language_loaded = true;
 }
 
 function GetAllText(){
@@ -137,5 +150,3 @@ function GetAllText(){
 		global.gmui_text.character_luck = new AddLocalisedText(GetTextElementId(flexpanel_node_get_child(flexpanel_node_get_child(_layer_character,"Luck"),"Text")),"character_luck");	
 	}
 }
-
-Localisation_Load("localisation.csv");
