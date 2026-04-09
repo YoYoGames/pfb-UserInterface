@@ -4,12 +4,12 @@ global.gmui_language_strings = {};
 global.gmui_language_loaded = false;
 global.gmui_language_file = "localisation.csv"
 
-#export GetLocalisation, Localisation_Update_All, SetLoaclisationFile
+#export GetLocalisation, Localisation_Update_All, SetLocalisationFile
 
 /// @desc Use to change the file that will be used for localisation lookups
 /// @param {String} _filename The filename of the csv to use for localisation strings
-function SetLoaclisationFile(_filename){
-	global.gmui_language_file = _filename
+function SetLocalisationFile(_filename){
+	global.gmui_language_file = _filename;
 }
 
 function GetLocalisation(_string_name,_language=global.gmui_language){
@@ -75,9 +75,9 @@ function Localisation_Load(_filename){
     var _height = ds_grid_height(_file);
 	
 	// check to see if there are already any strings loaded, if there are then we will need to clear them out 
-	if(array_length(global.gmui_language_strings) > 0){
-		array_resize(global.gmui_language_strings,0);
-		array_resize(global.gmui_languages,0)
+	if(array_length(global.gmui_languages) > 0){
+		array_resize(global.gmui_languages,0);
+		global.gmui_language_strings = {};
 	}
 
     // convert all the languages into a struct of structs
