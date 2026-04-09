@@ -73,6 +73,12 @@ function Localisation_Load(_filename){
     var _file = load_csv(_filename);
     var _width = ds_grid_width(_file);
     var _height = ds_grid_height(_file);
+	
+	// check to see if there are already any strings loaded, if there are then we will need to clear them out 
+	if(array_length(global.gmui_language_strings) > 0){
+		array_resize(global.gmui_language_strings,0);
+		array_resize(global.gmui_languages,0)
+	}
 
     // convert all the languages into a struct of structs
     for(var _l=1; _l<_width; _l++){
