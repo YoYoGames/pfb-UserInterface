@@ -94,7 +94,7 @@ function Localisation_Load(_filename){
 
 function GetAllText(){
 	// Initialise all of the layer values
-	var _layer_confirm, _layer_pause, _layer_options, _layer_character, _layer_gameover, _layer_mainmenu = false;
+	var _layer_confirm = false, _layer_pause = false, _layer_options = false, _layer_character = false, _layer_gameover = false, _layer_mainmenu = false;
 	
 	// get all UI layers
 	if (layer_exists("GMUI_Confirmation")){
