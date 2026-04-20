@@ -193,7 +193,7 @@ function ParseInput(_input_string)
 /// @desc This function returns the alpha part of the given colour, with the value being between 0 and 255, where 0 is completely transparent and 255 is completely opaque. If an alpha is not present (for example, in a constant like c_red) then the value 0 will be returned.
 /// @param {Real} _colour the colour to check
 /// @returns {Real} Alpha value (0 - 255)
-function colour_get_alpha(_colour)
+function get_textbox_highlight_alpha(_colour)
 {
     // For more information on the code in this function, you can go to the Bitwise Operators page of the manual
     // https://manual.gamemaker.io/monthly/en/#t=Additional_Information%2FBitwise_Operators.htm

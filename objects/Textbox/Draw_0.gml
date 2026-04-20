@@ -25,7 +25,7 @@ if (overflow_behaviour == "scroll"){
 if (hasFocus) 
 { 
     // Get the alpha value from the highlight colour
-   var _highlight_alpha = colour_get_alpha(highlight_colour)/255;
+   var _highlight_alpha = get_textbox_highlight_alpha(highlight_colour)/255;
     draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,0,highlight_colour,_highlight_alpha);
 
     if (caret_visible){
