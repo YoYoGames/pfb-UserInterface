@@ -56,9 +56,10 @@ draw_set_colour(selected_colour);
 if(selected != undefined){
     // if the text is too long then shrink it down to fit in the dropdown
     var _w = string_width(items[selected])*font_scale;
+	show_debug_message(string(_w))
     var _shrink = 1;
-    if(_w > (sprite_width*0.7)){
-        _shrink = ((sprite_width*0.7)/_w)*0.9;  // extra 10% smaller to add padding
+    if(_w > (sprite_width*0.5)){
+        _shrink = ((sprite_width*0.5)/_w)*0.9;  // extra 10% smaller to add padding
     }
     draw_text_transformed(x-(sprite_get_height(sprite_index)/2),y,items[selected],font_scale*_shrink,font_scale*_shrink,0);
 } else {
