@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"ToggleButton",
   "bboxMode":0,
-  "bbox_bottom":39,
+  "bbox_bottom":-1,
   "bbox_left":0,
-  "bbox_right":39,
+  "bbox_right":-1,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"98f1e5cd-476b-48ae-852c-742edc644dde","name":"98f1e5cd-476b-48ae-852c-742edc644dde","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c233ac19-7ecb-492d-ad3f-58ad1e1dd17c","name":"c233ac19-7ecb-492d-ad3f-58ad1e1dd17c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":40,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"51e57c83-f5d5-496d-ac64-46c28f9cda31","blendMode":0,"displayName":"default","isLocked":false,"name":"51e57c83-f5d5-496d-ac64-46c28f9cda31","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"59540a10-0dd0-46c5-9152-7ba95431d4d8","blendMode":0,"displayName":"default","isLocked":false,"name":"59540a10-0dd0-46c5-9152-7ba95431d4d8","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"ToggleButton",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"98f1e5cd-476b-48ae-852c-742edc644dde","path":"sprites/ToggleButton/ToggleButton.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"1c7f926a-1067-41e7-816f-6622242fce7c","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c233ac19-7ecb-492d-ad3f-58ad1e1dd17c","path":"sprites/ToggleButton/ToggleButton.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"25f2ec87-bb8e-4129-91b3-8a2fab48ef8f","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
