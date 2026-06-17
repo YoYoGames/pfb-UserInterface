@@ -8,6 +8,11 @@ if (hasFocus){
         
         prevStringLength = string_length(keyboard_string);
     }
+    
+    // Check on iOS as they will not recognise if you press the enter/return button on the keyboard
+    if((os_type == os_ios) && (keyboard_check_pressed(13) || keyboard_key==10)){
+        endInteraction();
+    }
 }
 
 if (x != current.x || y != current.y)
