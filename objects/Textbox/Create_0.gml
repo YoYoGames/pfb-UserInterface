@@ -242,6 +242,9 @@ function endInteraction()
     
     // Clear the value of keyboard_string
     keyboard_string = "";
+    
+    // Remove trailing whitespace and newlines
+    text = string_trim_end(text);
 	
 	// If the user is on a mobile device
 	if (os_type == os_android || os_type == os_ios){
